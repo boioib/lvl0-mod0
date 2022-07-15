@@ -6,63 +6,39 @@ import turtle
 def get_random_color():
     return "#%06X" % (random.randint(0, 0xFFFFFF))
 
-
-def get_next_color(i):
-    return colors[i % len(colors)]
-
-
 # ====================== DO NOT EDIT THE CODE ABOVE ===========================
+
 
 if __name__ == '__main__':
     window = turtle.Screen()
-    window.bgcolor('black')
-    window.setup(width=0.75, height=0.9, startx=0, starty=0)
-    
-    colors = ('red', 'blue', 'green', 'yellow', 'orange')
+    window.bgcolor('white')
     
     # Make a new turtle
-    turtle_stuart = turtle.Turtle()
-    # Make the turtle shape 'turtle', .shape('turtle')
-    turtle_stuart.shape('turtle')
-    # Set the turtle speed to max (0)
-    turtle_stuart.speed(0)
-    # Set the turtle width to 1
-    turtle_stuart.width(1)
-    # Create a variable to hold the number of sides in a pentagon
-    number = 5
-    # Create a variable to be the angle of 360 divided by the sides variable
-    penta_angle = 360/5
-    # Use a for loop to repeat ALL the following lines of code 360 times. 
-    for i in range(360):
-        if i == 100:
-            turtle_stuart.width(2)
-        if i == 200:
-            turtle_stuart.width(3)
-        turtle_stuart.pencolor(get_next_color(i))
-        turtle_stuart.forward(i)
-        turtle_stuart.right(penta_angle + 1)
-        turtle_stuart.hideturtle()
-        
-
-        # If the loop variable (i) is equal to 100, set the turtle width to 2
-        
-        # If the loop variable (i) is equal to 200, set the turtle width to 3
-        
-        # Use the get_next_color function to set the turtle pencolor,
-        # *hint .pencolor(get_next_color(i))
-        
-        # Move the turtle forward by the loop variable, *hint .forward(i)
-        
-        # Turn the turtle to the right by the angle variable + 1
-
-    # Hide your turtle so you can see the pattern.
-        
-    # Check the pattern against the picture in the recipe. If it matches, you are done!
+    turtle_fred = turtle.Turtle()
+    # This code sets our shape to a turtle
     
-    # Variations:
-    # *Make the pattern really huge
-    # *Change the colors
-    # *Experiment with different shapes
+    # Set your turtle's speed (0=fastest, 1=slowest, 10=faster)
+    turtle_fred.speed(6)
+    # Set your turtle's color using .color('green')
+    turtle_fred.color('yellow')
+    # Use a loop to repeat a the code below 50 times
+
+    for i in range(50):
+        turtle_fred.color(get_random_color())
+        turtle_fred.forward(5*i)
+        turtle_fred.right(360/7)
+        turtle_fred.width(i)
+
+
+        # Set the turtle color to a random color
+
+        # Move the turtle (5*i) pixels. 'i' is the loop variable
+        
+        # Turn the turtle (360/7) degrees to the right
+         
+        # Change the turtle width to 'i' (the loop variable)
+        
+        # Check the pattern against the picture in the recipe. If it matches, you are done!
     
-    # Call the turtle.done() method
+# ===================== DO NOT EDIT THE CODE BELOW ============================
     turtle.done()
